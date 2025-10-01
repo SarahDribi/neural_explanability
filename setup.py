@@ -7,10 +7,10 @@ if sys.version_info < (3,6):
 here = path.abspath(path.dirname(__file__))
 
 setup(
-    name='oval-bab',
+    name='neural-explanability',
     version='0.0.1',
-    description='OVAL Branch and Bound framework for neural network verification',
-    author='OVAL group, University of Oxford',
+    description='Explanabilibilty system based on  neural network formal verification',
+    author='Research internship',
     license='MIT',
     classifiers=[
         'Development Status :: 1 - Planning',
