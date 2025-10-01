@@ -2,9 +2,7 @@
 from typing import List
 import torch
 from src.explanation_logic.verification_utils.inner_bounds_compute import compute_bounds_around_input
-from src.explanation_logic.nap_extraction.extract_nap import nap_extraction_from_onnx
-# I am deleting those afterwards 
-from src.explanation_logic.dataset.utils import get_label_input
+
 # just like update bounds with nap
 def find_fixed_neuron_states(
     ubs: List[torch.Tensor], 

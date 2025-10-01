@@ -141,7 +141,7 @@ class ExplanationRunner:
             tag=tag,
         )
 
-from src.explanation_logic.dataset.mnist_data import  TestLoaderMnist  
+from src.dataset.mnist_data import  TestLoaderMnist  
 
 runner = ExplanationRunner(model="models/mnist-10x2.onnx", dataset="mnist")
 runner.set_outputs_base("new_outputs").set_coarsening_timeout_step(20)

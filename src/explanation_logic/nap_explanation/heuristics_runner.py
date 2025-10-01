@@ -1,10 +1,10 @@
-# src/napx/heuristics_runner.py
+
 import time, logging
 from typing import Iterable, List
 from src.explanation_logic.nap_explanation.explanation_types import HeuristicResult, ExplanationInput, count_timeouts
 from src.explanation_logic.coarsening.nap_coarsen import coarsen_heuristic
 from src.explanation_logic.nap_extraction.nap_utils import get_num_kept, get_num_total_neurons
-from src.explanation_logic.scripts.useful_func import max_epsilon_robustness
+from src.explanation_logic.nap_explanation.useful_func import max_epsilon_robustness
 from src.explanation_logic.nap_explanation.verifier import get_verifier
 
 log = logging.getLogger(__name__)

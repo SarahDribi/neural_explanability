@@ -8,7 +8,7 @@ from src.explanation_logic.utils.io_utils import make_run_dir, class_dir, export
 from src.explanation_logic.nap_extraction.extract_nap import nap_extraction_from_onnx
 from src.explanation_logic.nap_extraction.nap_utils import summarize_nap_single
 from src.explanation_logic.verification_utils.unchanged_activations import get_unchanged_activations, export_unchanged_activations
-from src.explanation_logic.scripts.useful_func import max_epsilon_robustness, max_epsilon_nap_robustness, get_predicted_label_from_model
+from src.explanation_logic.nap_explanation.useful_func import max_epsilon_robustness, max_epsilon_nap_robustness, get_predicted_label_from_model
 from src.explanation_logic.nap_explanation.verifier import get_verifier
 from src.explanation_logic.nap_explanation.heuristics_runner import run_many_heuristics
 log = logging.getLogger(__name__)
