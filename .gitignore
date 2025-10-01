@@ -34,8 +34,24 @@ env/
 
 # Data files and datasets
 # Datasets should typically not be versioned. Add a README on how to acquire them.
+data/
+src/**/data/
 tools/data/
 clean/dataset/selected_images/
+
+# Models and artifacts 
+artifacts/
+*.pt
+*.onnx
+*.joblib
+
+# Experiment outputs and results
+outputs/
+results/
+new_outputs/
+
+# Sensitive license files
+gurobi*.lic
 
 # IDE and editor configuration files
 .idea/
@@ -49,4 +65,4 @@ clean/dataset/selected_images/
 *.bak
 
 # IPython Notebook
-.ipynb_checkpoints
+.ipynb_checkpoints/
