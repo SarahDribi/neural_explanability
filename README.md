@@ -87,6 +87,14 @@ pytest tests/    # or npm test / gradle test etc.
 
 ---
 
+## FAQ
+
+- **Q** : Why do we only consider fully connected networks whith RELU activation functions ?  
+  **R** : I will answer it later .
+
+- **Q** : Can we really find the smallest set of neurons that define the explanation ?  
+  **R** : I will answer it later and add more questions
+
 ## Contributing
 
 1. Fork the project
