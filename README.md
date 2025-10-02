@@ -7,17 +7,21 @@ with formal verification garantees
 
 ## Features
 
-- Extraction of neural activations that happened when the model infered on the input
-- Finding the maximum biggest region around input (epsilon ball) where the local neural activation
-  extracted enforces more robustness of the model's prediction
-- Calling a formal verifier to loosen some of the neural activation constraints ,
-  while still keeping the intial robustness property around the region
-  -The user can set the priority of the neuron constraints dropping , following a
-  set of implemented heuristics , each heuristic impacts the found minimal neurons set:
-  the shortest set of neurons given this heuristic traversal such that abstracting one's
-  state in this input region changes the classifier's prediction
-- The timeout of the checking process for dropping the activation constraint on a certain
-  neuron can be specified by the user .
+*Neural Activation Extraction
+Extract the neural activations produced when the model performs inference on a given input.
+
+*Local Robust Region Identification
+Determine the largest surrounding region (an ε-ball around the input) in which the extracted neural activation pattern ensures the robustness of the model’s prediction.
+
+*Constraint Relaxation via Formal Verification
+Use a formal verifier to selectively relax certain neuron activation constraints, while still preserving the original robustness property within the region.
+
+*Neuron Constraint Prioritization
+The user can configure priority rules for dropping activation constraints, based on a set of implemented heuristics.
+Each heuristic affects the minimal neuron set found — i.e., the smallest subset of neurons such that abstracting their activation states within the region changes the model’s prediction.
+
+Timeout Configuration
+The user can specify a timeout for the verification process when attempting to drop the activation constraint on a particular neuron.
 
 ---
 
