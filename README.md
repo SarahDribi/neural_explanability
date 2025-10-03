@@ -50,7 +50,6 @@ This avoids stalls on hard instances.
 ```
 root/
  ├── src/          # Source code
- ├── docs/         # Documentation
  ├── tests/        # Unit tests
  ├── data/         # Data files
  └── README.md     # This file
