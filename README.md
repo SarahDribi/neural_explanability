@@ -72,7 +72,7 @@ git clone https://github.com/something
 cd project
 
 # Install dependencies
-pip install -r requirements.txt   # or npm install / gradle build etc.
+
 
 # Run the script 
 python3 -m src.scripts.myscript
