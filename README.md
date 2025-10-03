@@ -70,11 +70,9 @@ src/
 
 ---
 ## Installation
+conda env create -f environment.yml
+conda activate neural-explain
 
-### Prerequisites
-
-- Language/Framework version
-- Dependencies
 
 ### Steps
 
