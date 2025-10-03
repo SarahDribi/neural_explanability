@@ -74,8 +74,8 @@ cd project
 # Install dependencies
 pip install -r requirements.txt   # or npm install / gradle build etc.
 
-# Run the script
-python main.py
+# Run the script 
+python3 -m src.scripts.myscript
 ```
 
 ---
