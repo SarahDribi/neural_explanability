@@ -1,20 +1,17 @@
+
+
 ## Goal
-Internal neuron-level explanations: find **subset-minimal** sets of neuron status literals whose fixation **forces** the model to keep the same decision as at \(x_0\) **for all inputs in a region** \(R\) around \(x_0\).
 
-Formally: given \(f\), \(x_0\), class \(c\), region \(R\),
-find \(S\) s.t.  
-\(\forall x\in R,\ \arg\max_j f_j(x;\ \text{statuses in }S)=c\) and  
-\(\nexists S'\subset S\) with the same property.
+Find subset-minimal sets of neuron-status literals.
 
-### Inputs
-- Trained ReLU network \(f\)
-- \(x_0\) and \(c=\arg\max f(x_0)\)
-- Region \(R\) (e.g. \(\ell_\infty\) ball, radius \(\epsilon\))
-- Parameters: \(\delta\) (status margin), \(\gamma\) (decision margin)
+**Formal statement:**
 
-### Output
-- Subset-minimal set \(S\) of neuron-status literals + diagnostics (|S|, per-layer histogram, runtime, certified margin).
+![equation](assets/formal_goal.png)
 
+Where:
+- S = set of literals (active/inactive neurons)
+- R = region around x₀ (e.g. L∞ ball)
+- c = predicted class at x₀
 ### Method (oracle + greedy)
 - `check(S)` uses a verifier (MILP/BaB) with status constraints on \(S\) and region constraints on \(R\).
 - Start from full NAP, greedily remove literals while preserving certification.
