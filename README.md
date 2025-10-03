@@ -27,21 +27,22 @@ find a set S of neuron-status literals such that:
 
 ## Features
 
-*Neural Activation Extraction
-Extract the neural activations produced when the model performs inference on a given input.
+- **Neural Activation Extraction**  
+  Extracting the internal neuron activations when the model performs inference on a given input.
 
-*Local Robust Region Identification
-Determine the largest surrounding region (an ε-ball around the input) in which the extracted neural activation pattern ensures the robustness of the model’s prediction.
+- **Local Robust Region Identification**  
+  Define the largest surrounding region (typically an ε-ball around the input) where the observed activation pattern guarantees the robustness of the model’s prediction.
 
-*Constraint Relaxation via Formal Verification
-Use a formal verifier to selectively relax certain neuron activation constraints, while still preserving the original robustness property within the region.
+- **Constraint Relaxation via Formal Verification**  
+  Use a formal verifier (MILP / Branch-and-Bound) to selectively relax neuron activation constraints while preserving the robustness property in the region.
 
-*Neuron Constraint Prioritization
-The user can configure priority rules for dropping activation constraints, based on a set of implemented heuristics.
-Each heuristic affects the minimal neuron set found — i.e., the smallest subset of neurons such that abstracting their activation states within the region changes the model’s prediction.
+- **Neuron Constraint Prioritization**  
+  Configure priority rules for which constraints to try dropping first (based on heuristics such as gradient magnitude, layer depth, or random order).
+ Different heuristics lead to different minimal sets.
 
-Timeout Configuration
-The user can specify a timeout for the verification process when attempting to drop the activation constraint on a particular neuron.
+- **Timeout Configuration**  
+  Specify a timeout for each verification call when attempting to drop a neuron constraint.
+This avoids stalls on hard instances.
 
 ---
 
