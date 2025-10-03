@@ -1,6 +1,5 @@
 
-#Goal
-
+## Goal
 Finding  **subset-minimal** sets of neuron-status literals whose fixation forces the model to keep the same decision in a region around the input.
 
 **Formal statement:**
