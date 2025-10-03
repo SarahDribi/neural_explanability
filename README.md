@@ -15,11 +15,10 @@ Where:
 ### Method (oracle + greedy)
 - `check(S)` uses a verifier (MILP/BaB) with status constraints on \(S\) and region constraints on \(R\).
 - Start from full NAP, greedily remove literals while preserving certification.
+  
 
-### Caveats / Doubts
-- \(R\) too large ⇒ no certificate even with full NAP.
-- Numerical margins \(\delta,\gamma\) trade precision vs feasibility.
-- Minimality is **by inclusion** (not guaranteed minimal cardinality).
+### 
+- Minimality of  the explanation depends on the chosen traversal heuristic and is not guaranteed as the minimal cardinality.
 
 
 ## Features
