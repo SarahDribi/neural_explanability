@@ -102,14 +102,6 @@ pytest tests/    # or npm test / gradle test etc.
 
 ---
 
-## Roadmap
-
-- [ ] Feature A
-- [ ] Feature B
-- [ ] Feature C
-
----
-
 ## FAQ
 
 - **Q** : Why do we only consider fully connected networks whith RELU activation functions ?  
