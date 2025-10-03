@@ -1,24 +1,28 @@
 
+#Goal
 
-## Goal
-
-Find subset-minimal sets of neuron-status literals.
+Finding  **subset-minimal** sets of neuron-status literals whose fixation forces the model to keep the same decision in a region around the input.
 
 **Formal statement:**
 
-![equation](assets/formal_goal.png)
+Given a ReLU network f, an input x₀ with class c = argmax_j f_j(x₀),
+and a region R around x₀ (e.g., L∞ ball of radius ε),
+find a set S of neuron-status literals such that:
 
-Where:
-- S = set of literals (active/inactive neurons)
-- R = region around x₀ (e.g. L∞ ball)
-- c = predicted class at x₀
-### Method (oracle + greedy)
+1) For all x in R: argmax_j f_j(x ; statuses in S enforced) = c  
+2) No strict subset of S also satisfies (1)
+
+**Where:**
+- **S** = set of literals (“active” or “inactive” status of specific ReLUs)
+- **R** = region around x₀ (e.g., ‖x − x₀‖∞ ≤ ε)
+- **c** = class predicted at x₀
+### Method (oracle + iterative approach)
 - `check(S)` uses a verifier (MILP/BaB) with status constraints on \(S\) and region constraints on \(R\).
-- Start from full NAP, greedily remove literals while preserving certification.
+- We start from the full Neural activation pattern of the input and greedily remove literals while preserving certification.
   
 
 ### 
-- Minimality of  the explanation depends on the chosen traversal heuristic and is not guaranteed as the minimal cardinality.
+- Minimality of  the explanation depends on the chosen traversal heuristic and is not guaranteed to be the minimal cardinality.
 
 
 ## Features
