@@ -107,7 +107,7 @@ demos
 ## Tests
 
 ```bash
-pytest tests/    # or npm test / gradle test etc.
+pytest tests/  
 ```
 
 ---
