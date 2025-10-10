@@ -70,8 +70,8 @@ src/
 
 ---
 ## Installation
-conda env create -f environment.yml
-conda activate neural-explain
+You need to install gurobi and specify the  gurobi liscence file path as an 
+environment variable
 
 
 ### Steps
