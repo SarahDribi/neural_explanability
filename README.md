@@ -77,16 +77,11 @@ conda activate neural-explain
 ### Steps
 
 ```bash
-# Clone the repository
-git clone https://github.com/something
-cd project
-
-# Install dependencies
-
-
-# Run the script 
+git clone https://github.com/SarahDribi/neural_explanability
+cd neural_explanability
+conda env create -f environment.yml
+conda activate neural-explain
 python3 -m src.scripts.myscript
-```
 
 ---
 
