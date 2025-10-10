@@ -90,12 +90,7 @@ python3 -m src.scripts.myscript
 
 ---
 
-## Usage
 
-```bash
-# Example command to run
-python main.py --option value
-```
 
 ## Screenshots
 
@@ -112,13 +107,7 @@ pytest tests/
 
 ---
 
-## FAQ
 
-- **Q** : Why do we only consider fully connected networks whith RELU activation functions ?  
-  **R** : I will answer it later .
-
-- **Q** : Can we really find the smallest set of neurons that define the explanation ?  
-  **R** : I will answer it later and add more questions
 
 ## Contributing
 
