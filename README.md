@@ -92,8 +92,9 @@ python3 -m src.scripts.myscript
 ## Screenshots
 
 Representation of the activation status of neurons:
-We can either fix their state or abstract. 
-Meaning when abstracted it s allowed to  be active or inacti
+We can either fix their state or abstract it.  
+Meaning when abstracted , a neuron is allowed to  be active or inactive
+
 
 ![Homepage Screenshot](assets/homepage.png)
 demos
