@@ -14,7 +14,7 @@ class ExplanationRunner:
     - model: chemin vers le modèle (ex: 'models/mnist.onnx' ou 'artifacts/wbc_mlp.onnx')
     - dataset: 'mnist' ou 'breast_cancer' (ou autre si tu fournis un dataloader adapté)
     - heuristics: liste des heuristiques à appliquer (par défaut: DEFAULT_HEURISTICS)
-    - coarsening_timeout_step: pas de timeout (unité logique laissée au pipeline)
+    - coarsening_timeout_step: pas de timeout 
     """
 
     def __init__(
@@ -34,7 +34,7 @@ class ExplanationRunner:
         # s'assure que le dossier de sortie existe
         Path(self.outputs_base).mkdir(parents=True, exist_ok=True)
 
-    # ---------- Setters en mode fluent ----------
+    # ---------- Setters ----------
     def set_model(self, model: str):
         self.model = model
         return self
@@ -66,7 +66,7 @@ class ExplanationRunner:
         self.coarsening_timeout_step = step
         return self
 
-    # ---------- I/O helpers ----------
+    
     def _get_test_input_by_index(self, dataloader, idx: int) -> Tuple[torch.Tensor, int]:
         """
         Attend un objet 'dataloader' qui expose une méthode:
@@ -86,7 +86,7 @@ class ExplanationRunner:
             "Le dataloader doit définir 'get(idx)' ou 'get_test_sample(idx)'."
         )
 
-    # ---------- run ----------
+
     def explain(
         self,
         input_tensor: torch.Tensor,
@@ -128,12 +128,8 @@ class ExplanationRunner:
         puis appelle 'explain' avec les bons paramètres.
         """
         input_tensor, gt_label = self._get_test_input_by_index(dataloader, idx)
-        # input_tensor attendu batched (1,...) par la plupart des pipelines;
-        # si jamais il ne l’est pas, on peut forcer unsqueeze ici :
-        if input_tensor.dim() == 1 or (input_tensor.dim() == 3 and input_tensor.shape[0] != 1):
-            # on tente de le mettre au format (1, ...)
-            input_tensor = input_tensor.unsqueeze(0)
-
+        
+        #import pdb; pdb.set_trace()
         return self.explain(
             input_tensor=input_tensor,
             gt_label=int(gt_label),

@@ -24,6 +24,7 @@ from src.explanation_logic.verification_utils.inner_bounds_compute import comput
 
 
 def verify_robustness_around_input(model_path,input,epsilon, json_config, label, use_gpu,timeout,num_classes=10):
+    
     layers, domain,lbs,ubs = compute_bounds_around_input(model_path,input,epsilon, label, use_gpu,num_classes=num_classes)
     bab=False
 
@@ -84,7 +85,7 @@ def verify_robustness_around_input(model_path,input,epsilon, json_config, label,
         
         sat_status, global_lb, bab_nb_states = anderson_mip_net.solve_mip(timeout=timeout, insert_cuts=False)
         
-        #import pdb; pdb.set_trace()
+    
         return not sat_status
 
 

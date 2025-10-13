@@ -34,7 +34,7 @@ class TestLoaderMnist:
     def get_test_sample(self, i: int):
         """Retourne (image, label) pour l'échantillon i du dataset test"""
         return self.dataset[i]
-"""
+
 testloader = TestLoaderMnist(batch_size=128, flatten=False, seed=123)
 
 # Toujours le même ordre à chaque run
@@ -43,10 +43,10 @@ for imgs, labels in testloader.get_loader():
     break
 
 
-img, lbl = testloader.get_ith_sample(42)
-print("Label:", lbl)
-print(img)
+sample= testloader.get_test_sample(42)
+print("Sample:", sample)
 
 
-"""
+
+
 

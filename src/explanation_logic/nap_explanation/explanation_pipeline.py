@@ -22,6 +22,7 @@ def build_explanation_input(input_tensor, gt_label: int, dataset: str, model_pat
         raise ValueError("MNIST label must be in [0..9]")
 
     verifier = get_verifier(dataset, model_path)
+    
     eps = max_epsilon_robustness(input_tensor, nap, pred, verifier)
     eps_region = max_epsilon_nap_robustness(input_tensor, pred, verifier)
     try:

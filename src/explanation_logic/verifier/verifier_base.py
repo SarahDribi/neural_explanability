@@ -70,8 +70,8 @@ def get_mnist_verifier(timeout=3000,model_path="clean/models/small_model.onnx",j
     return Verifier(model_path, json_config, use_gpu, timeout,num_classes,timeout_coarsening_step=coarsening_timeout_step)
 
 
-def get_breast_cancer_verifier(timeout=3000,model_path="clean/models/small_model.onnx",json_config="clean/configs/breast_cancer_model.json",coarsening_timeout_step=12):
+def get_breast_cancer_verifier(timeout=3000,model_path="artifacts/wbc_mlp.onnx",json_config="bab_configs/mnistfc_vnncomp21.json",coarsening_timeout_step=12):
     use_gpu = False
-    num_classes=2
-    return Verifier(model_path, json_config, use_gpu, timeout,num_classes,timeout_coarsening_step=coarsening_timeout_step)
+    
+    return Verifier(model_path, json_config, use_gpu, timeout,num_classes=2,timeout_coarsening_step=coarsening_timeout_step)
 
