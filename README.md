@@ -65,7 +65,9 @@ src/
  ├── dataset/          # contains dataset loaders that apply normalization
  ├── explanation_logic/  # has all the logic of explanation
  ├── plnn/         # this folder has the tools for milp programming
- └── scripts/   # Some higher level functions that hide some underlying details
+ └── scripts/
+ └── tools/     some optimized bound propagation tools taken from oval-bab directory
+  # Some higher level functions that hide some underlying details
 ```
 
 ---
